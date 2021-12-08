@@ -7,9 +7,11 @@ AWS S3, redshift, Postgres
 
 
 
-Maximize data ingestion and reporting performance on Amazon Redshift
+- Top 10 performance tuning techniques for Amazon Redshift
+https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-techniques-for-amazon-redshift/
+- Maximize data ingestion and reporting performance on Amazon Redshift
 https://aws.amazon.com/blogs/big-data/maximize-data-ingestion-and-reporting-performance-on-amazon-redshift/
-Top 8 Best Practices for High-Performance ETL Processing Using Amazon Redshift
+- Top 8 Best Practices for High-Performance ETL Processing Using Amazon Redshift
 https://aws.amazon.com/blogs/big-data/top-8-best-practices-for-high-performance-etl-processing-using-amazon-redshift/
 
 
