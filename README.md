@@ -10,7 +10,7 @@ Data source: csv files and parquet files
 ### data moding 
 - save to parquet files
 
-
+### references
 - Top 10 performance tuning techniques for Amazon Redshift
 -https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-techniques-for-amazon-redshift/
 - Maximize data ingestion and reporting performance on Amazon Redshift
