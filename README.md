@@ -1,10 +1,13 @@
 # Data-Engineering-Capstone-Project
-AWS S3, redshift, Postgres
+AWS S3, spark, parquet
 
+### read files from s3 using spark.
 
+### cleaning data: 
+-avoid data Duplicate, data null using SQL command like "group by" or "where xxx is not null" 
 
-
-
+### data moding 
+save to parquet files
 
 
 - Top 10 performance tuning techniques for Amazon Redshift
