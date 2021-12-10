@@ -1,13 +1,14 @@
 # Data-Engineering-Capstone-Project
-AWS S3, spark, parquet
-
+## AWS S3, spark, parquet
+## file name:  Capstone Project Template.ipynb
 ### read files from s3 using spark.
+Data source: csv files and parquet files
 
 ### cleaning data: 
--avoid data Duplicate, data null using SQL command like "group by" or "where xxx is not null" 
+- avoid data Duplicate, data null using SQL command like "group by" or "where xxx is not null" 
 
 ### data moding 
-save to parquet files
+- save to parquet files
 
 
 - Top 10 performance tuning techniques for Amazon Redshift
