@@ -10,6 +10,15 @@ Data source: csv files and parquet files
 ### data moding 
 - save to parquet files
 
+### 
+1. The data was increased by 100x.
+   > we can scale out (more cluter) or scale up (resize a runningg cluster). AWS EMR managed scaling. 
+   
+3. The pipelines would be run on a daily basis by 7 am every day.
+   > settiing airflow ‘’‘'schedule_interval': ' 0 7 * * *',’
+5. The database needed to be accessed by 100+ people.
+
+
 ### references
 - Top 10 performance tuning techniques for Amazon Redshift
 -https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-techniques-for-amazon-redshift/
