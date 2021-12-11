@@ -4,30 +4,59 @@
 ### read files from s3 using spark.
 Data source: csv files and parquet files
 
-### cleaning data: 
-- avoid data Duplicate, data null using SQL command like "group by" or "where xxx is not null" 
+### Cleaning data: 
+- Avoid duplicate data using SQL command : "group by" , "count(*) count"
+   <p> The GROUP BY statement groups rows that have the same values into summary rows, select a, b, c, count(*) count, When we get count >1, it is mean we got duplicate record  </p>
+```
+select City, State, cast(`State Code` as varchar(10) ) State_Code, Race, Count(*) count from cities\
+        group by City, State,`State Code`, Race\
+        order by count desc "
+```
+- Avoid missing values using SQL command: where Field is not null
 
-### data moding 
-- save to parquet files
+```
+select City, Country, avg(AverageTemperature) AverageTemperature
+from temperature 
+where country='United States' and AverageTemperature is not null
+group by City, Country
+```
+### file names:
+Capstone Project Template.ipynb
+qa_check.py : checking data quality
+### Data moding :  save to parquet files 
+- fact_immgration:  model
+- dim_airport
+- dim_cities
+- dim_temperature 
 
-### 
-1. The data was increased by 100x.
-   > we can scale out (more cluter) or scale up (resize a runningg cluster). AWS EMR managed scaling. 
+### How often the data should be updated 
+It depends on our data resource update schedule, if we get new files daily, then we can run them daily. 
+I suppose the system will update new files every day, then we just run it daily.  
+
+###
+- The data was increased by 100x.
+  <p>1. we can use Spark provides an interface for programming entire clusters with implicit data parallelism. Or we can scale out (more cluter) or scale up (resize a runningg cluster). AWS EMR managed scaling. for example, we can add more node in our clusters. </p>
    
-3. The pipelines would be run on a daily basis by 7 am every day.
-   > settiing airflow ‘’‘'schedule_interval': ' 0 7 * * *',’
-5. The database needed to be accessed by 100+ people.
+- The pipelines would be run on a daily basis by 7 am every day.
+   Airflow to schedule routine time 
+   ```
+   dag = DAG('udac_example_dag', 
+          description = ' Airflow',
+          schedule_interval = '0 7 * * *',  
+          max_active_runs = 1   
+     )
+   ``` 
+- The database needed to be accessed by 10K people.
+  <p> Multi-AZ creates a standby database to increase availability. Read Replicas can be used to scale and increase performance for read-heavy workloads. Scaling the database tier with Amazon RDS Read Replicas. Read Replicas are available if you are using MySQL, PostgresSQL, or Amazon Aurora. RDS MySQL and RDS PostgresSQL allow up to five Read Replicas and leverage native replication capability of MySQL and PostgresSQL that are subject to replication lag </p>
+   
+ 
+ 
 
 
-### references
-- Top 10 performance tuning techniques for Amazon Redshift
--https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-techniques-for-amazon-redshift/
-- Maximize data ingestion and reporting performance on Amazon Redshift
--https://aws.amazon.com/blogs/big-data/maximize-data-ingestion-and-reporting-performance-on-amazon-redshift/
-- Top 8 Best Practices for High-Performance ETL Processing Using Amazon Redshift
--https://aws.amazon.com/blogs/big-data/top-8-best-practices-for-high-performance-etl-processing-using-amazon-redshift/
--Six Steps to Fixing Your Redshift Vacuum
--https://medium.com/@chadlagore/six-steps-to-fixing-your-redshift-vacuum-6aad196d46cf
+### references 
+- <a href='https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-techniques-for-amazon-redshift/' target=''>Top 10 performance tuning techniques for Amazon Redshift </a><br>
+- <a href='https://aws.amazon.com/blogs/big-data/maximize-data-ingestion-and-reporting-performance-on-amazon-redshift/'>Maximize data ingestion and reporting performance on Amazon Redshift </a><br>
+- <a href='https://aws.amazon.com/blogs/big-data/top-8-best-practices-for-high-performance-etl-processing-using-amazon-redshift/'>Top 8 Best Practices for High-Performance ETL Processing Using Amazon Redshift</a><br> 
 
 
  
