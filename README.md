@@ -1,4 +1,9 @@
-# Data-Engineering-Capstone-Project
+# Project summary 
+-Analyze the data of Travelers Visiting the United States from I94 form
+<p>An I-94 form is needed by all persons except U.S. Citizens, returning resident aliens, aliens with immigrant visas, and most Canadian citizens visiting or in transit. Air and Sea travelers will be issued I-94s during the admission process at the port of entry. </p>
+
+1. Top10 citizens of countries traveling to the United States, as well as their cities, weather,
+
 ## AWS S3, spark, parquet
 ## file name:  Capstone Project Template.ipynb
 ### read files from s3 using spark.
@@ -23,11 +28,14 @@ group by City, Country
 ### file names:
 Capstone Project Template.ipynb
 qa_check.py : checking data quality
+
 ### Data moding :  save to parquet files 
 - fact_immgration:  model
 - dim_airport
 - dim_cities
 - dim_temperature 
+
+### Data Schema:
 
 ### How often the data should be updated 
 It depends on our data resource update schedule, if we get new files daily, then we can run them daily. 
