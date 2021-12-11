@@ -1,9 +1,20 @@
 # Project summary 
--Analyze the data of Travelers Visiting the United States from I94 form
+###Analyze the data of Travelers Visiting the United States from I94 form
 <p>An I-94 form is needed by all persons except U.S. Citizens, returning resident aliens, aliens with immigrant visas, and most Canadian citizens visiting or in transit. Air and Sea travelers will be issued I-94s during the admission process at the port of entry. </p>
 
-1. Top10 citizens of countries traveling to the United States, as well as their cities, weather,
+<p> Top10 citizens of countries travelers traveling to the United States and related information  </p>
 
+## Tools and technologies 
+
+<p>spark: </p>
+
+- In-memory computing
+- Real-time steam processsing
+- Partitioning 
+- Spark SQL
+
+parquet file format:
+- low cpu cost 
 ## AWS S3, spark, parquet
 ## file name:  Capstone Project Template.ipynb
 ### read files from s3 using spark.
