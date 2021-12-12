@@ -2,7 +2,7 @@
 ###Analyze the data of Travelers Visiting the United States from I94 form
 <p>An I-94 form is needed by all persons except U.S. Citizens, returning resident aliens, aliens with immigrant visas, and most Canadian citizens visiting or in transit. Air and Sea travelers will be issued I-94s during the admission process at the port of entry. </p>
 
-<p> Top10 citizens of countries travelers traveling to the United States and related information  </p>
+<p>repoting: Top5 citizens of countries travelers traveling to the United States and related information  </p>
 
 ## Tools and technologies 
 
@@ -41,12 +41,13 @@ Capstone Project Template.ipynb
 qa_check.py : checking data quality
 
 ### Data moding :  save to parquet files 
-- fact_immgration:  model
+- fact_immgration:   
 - dim_airport
 - dim_cities
 - dim_temperature 
-
-### Data Schema:
+- dim_country
+ 
+ 
 
 ### How often the data should be updated 
 It depends on our data resource update schedule, if we get new files daily, then we can run them daily. 
@@ -66,6 +67,7 @@ I suppose the system will update new files every day, then we just run it daily.
      )
    ``` 
 - The database needed to be accessed by 10K people.
+  <p> from file system to redshit </p>
   <p> Multi-AZ creates a standby database to increase availability. Read Replicas can be used to scale and increase performance for read-heavy workloads. Scaling the database tier with Amazon RDS Read Replicas. Read Replicas are available if you are using MySQL, PostgresSQL, or Amazon Aurora. RDS MySQL and RDS PostgresSQL allow up to five Read Replicas and leverage native replication capability of MySQL and PostgresSQL that are subject to replication lag </p>
    
  
